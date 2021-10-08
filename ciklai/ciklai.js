@@ -61,10 +61,29 @@ while (random2 != 5 && random2 != 7) {
 }
 console.log("ciklu kiekis: ", ciklas);
 // 11. console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 20, bet ne anksčiau nei po 11 ciklų;
+let suma2 = 0;
+let ciklas2 = 0;
+let random3;
 
-
+while (suma2 <= 20 || ciklas2 < 11) {
+    random3 = Math.floor(Math.random() * 11);
+    console.log(random3);
+    ciklas2++;
+    suma2+=random3;
+}
+console.log("ciklų kiekis: ", ciklas2);
+console.log("suma", suma2);
 // 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
+let nelyginis = 0;
 
+while(nelyginis < 3) {
+let random4 = Math.floor(Math.random() * 11);
+console.log(random4);
+if(random4 % 2 === 1 ) {
+nelyginis++;
+}
+}
+console.log("nelyginis skaicius", nelyginis);
 
 // 13. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
 
