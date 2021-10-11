@@ -1,11 +1,24 @@
 // 1. Sukurti masyvą (piniginę), kurio ilgis yra atsitiktinis nuo 10 iki 30, o reikšmės atsitiktiniai skaičiai nuo 0 iki 10 (pinigai);
-
+const pinigineIlgis = Math.floor(Math.random() * 21) + 10;
+const pinigine = [];
+for (let i = 0; i < pinigineIlgis; i++) {
+  pinigine[i] = Math.floor(Math.random() * 11);
+}
+console.log(pinigine);
 
 // 2. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio reikšmių (pinigų esančių piniginėje) sumą;
-
-
+let suma = 0;
+for ( let i = 0; i < pinigine.length; i++) {
+    suma += pinigine[i];
+}
+console.log(suma);
 // 3. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
-
+let suma2 = 0;
+for ( let i = 0; i < pinigine.length; i++) {
+    if (pinigine < 2);
+    suma2 += pinigine[i];
+}
+console.log(suma2);
 
 // 4. Išleisti visus metalinius pinigus (reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
 
@@ -49,4 +62,4 @@
 // 17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
 
 
-//  18. Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
+//  18. Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai};
