@@ -78,23 +78,62 @@ naujaPinigine.push(monetos);
 naujaPinigine.push(popieriniai);
 console.log("nauja pinigine: ", naujaPinigine);
 // 10. Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią skyrelį- masyvą su kortelėm: ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
-
+let korteles = ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+naujaPinigine.push(korteles);
+console.log("nauja pinigine su korteliu skyreliu: ", naujaPinigine);
 
 // 11. Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
-
-
+for (let i = 0; i < korteles.length - 1; i++) {
+    if (korteles[i] > korteles[i + 1]) {
+    let rusiuotojas = korteles[i];
+    korteles[i] = korteles[i + 1];
+    korteles[i + 1] = rusiuotojas;
+    i = -1;
+    }
+}
+console.log("nauja pinigine su kortelemis abeceles tvarka: ", naujaPinigine);
 // 12. Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa' (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
-
-
+for (let i = korteles.length; i < 20; i++) {
+    if (Math.trunc(Math.random() * 2) < 1) {
+    korteles[i] = "MasterCard";
+    } else {
+    korteles[i] = "Visa";
+    }
+}
+console.log("mastercard ir visa korteles: ", korteles);
 // 13. Paskaičiuokite, kokio tipo kortelių ('MasterCard' arba 'Visa') yra daugiau;
+let kVisa = 0;
+let kMastercard = 0;
 
+for (let i = 0; i < korteles.length; i++) {
+    if (korteles[i] === "MasterCard") {
+        kMastercard++;
+    }
+    if (korteles[i] === "Visa") {
+        kVisa++;
+    }
+}
+console.log("kiek mastercard: ", kMastercard, "kiek visa: ", kVisa);
 
 // 14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
-
+let bilietai = [];
+for (let i = 0; i < 10; i++) {
+    let reiksmes = Math.trunc(Math.random() * (9999999999 - 1000000000) + 1000000000);
+    bilietai.push(reiksmes);
+}
+naujaPinigine.push(bilietai);
+console.log("nauja pinigine su bilietais: ", naujaPinigine);
 
 // 15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
-
-
+for (let i = 0; i < naujaPinigine[3].length-1; i++) {
+    if (naujaPinigine[3][i] < naujaPinigine[3][i + 1]) {
+    let rusiuotojas = naujaPinigine[3][i];
+    naujaPinigine[3][i] = naujaPinigine[3][i + 1];
+    naujaPinigine[3][i + 1] = rusiuotojas;
+    i = -1;
+    }
+}
+console.log("isrusiuoti bilietai: ", naujaPinigine[3]);
 // 16. Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 
 
