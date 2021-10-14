@@ -74,12 +74,55 @@ while (suma2 <= 20 || ciklas2 < 11) {
 console.log("ciklų kiekis: ", ciklas2);
 console.log("suma", suma2);
 // 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
+let nelyginis = 0;
 
+while(nelyginis < 3) {
+let random4 = Math.floor(Math.random() * 11);
+console.log(random4);
+if(random4 % 2 === 1 ) {
+nelyginis++;
+}
+}
+console.log("nelyginis skaicius", nelyginis);
 
 // 13. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
+let n = 0;
+let nNaujas = 1;
 
+while (n !== nNaujas) {
+  n = Math.trunc(Math.random() * 11);
+  nNaujas = Math.trunc(Math.random() * 11);
+  console.log("atsitiktinis M: ", n, "atsitiktinis rNaujas: ", nNaujas);
+}
 
 // 14. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Skaičiuoti abiejų skaičių sumas skirtinguose kintamuosiuose. Ciklą kartoti tol, kol kiekviena iš sumų bus daugiau nei 100;
+let randome;
+let randomeNaujas;
+let randomeSuma = 0;
+let randomeNaujasSuma = 0;
 
+while (randomeSuma <= 100 || randomeNaujasSuma <= 100) {
+  randome = Math.trunc(Math.random() * 11);
+  randomeSuma += randome;
+  randomeNaujas = Math.trunc(Math.random() * 11);
+  randomeNaujasSuma += randomeNaujas;
+  console.log("randome skaicius: ", randome, " ", "randomNaujas skaicius: ", randomeNaujas);
+  console.log("randomeSuma: ", randomeSuma, " ", "randomeNaujasSuma5\: ", randomeNaujasSuma);
+}
 
 // 15. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti kol bus sugeneruota po tris arba daugiau nelyginių skaičių.
+let randomo;
+let randomoNew;
+let randomoNelyginis = 0;
+let randomoNaujasNelyginis = 0;
+
+while (randomoNelyginis <= 3 && randomoNaujasNelyginis <= 3) {
+  randomo = Math.trunc(Math.random() * 11);
+  randomoNaujas = Math.trunc(Math.random() * 11);
+  console.log("randomo: ", randomo, " ", "randomoNaujas: ", randomoNaujas);
+  if (randomo % 2 === 1 || randomoNaujas % 2 === 1) {
+    randomoNelyginis++;
+    randomoNaujasNelyginis++;
+  }
+}
+
