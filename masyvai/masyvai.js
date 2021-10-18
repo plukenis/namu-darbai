@@ -52,23 +52,60 @@ for(let i = 0; i < pinigineIlgis; i++) {
 console.log("visi lygus nuliui: ", pinigine);
 
 // 7. Į 1 uždavinio masyvą pridėti tiek naujų reikšmių (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo ilgis būtų lygiai 30;
-
+for (let i = pinigineIlgis; i < 30; i++) {
+    pinigine[i] = Math.trunc(Math.random() * (30 - 10) + 10);
+}
+    
+console.log("nauji pinigai: ", pinigine);
 // 8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyvus. Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
+let monetos = [];
+let popieriniai = [];
 
+for (let i = 0; i < pinigineIlgis; i++) {
+    if (pinigine[i] <= 2) {
+        monetos.push(pinigine[i]);
+    }
+    if(pinigine[i] > 2) {
+        popieriniai.push(pinigine[i]);
+    }
+}
+console.log("monetos: ", monetos);
+console.log("popieriniai: ", popieriniai);
 // 9. Sukurti masyvą (piniginę su dviem skyreliais) iš dviejų elementų, kurio pirmas elementas būtų masyvas iš 8 uždavinio su monetom, o antras elementas masyvas iš 8 uždavinio su popieriniais pinigais;
 
-
+let naujaPinigine = [];
+naujaPinigine.push(monetos);
+naujaPinigine.push(popieriniai);
+console.log("nauja pinigine: ", naujaPinigine);
 // 10. Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią skyrelį- masyvą su kortelėm: ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
-
+let korteles = ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+naujaPinigine.push(korteles);
+console.log("nauja pinigine su korteliu skyreliu: ", naujaPinigine);
 
 // 11. Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
-
+for (let i = 0; i < korteles.length - 1; i++) {
+    if (korteles[i] > korteles[i + 1]) {
+    let rusiuotojas = korteles[i];
+    korteles[i] = korteles[i + 1];
+    korteles[i + 1] = rusiuotojas;
+    i = -1;
+    }
+}
+console.log("nauja pinigine su kortelemis abeceles tvarka: ", naujaPinigine);
 // 12. Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa' (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
-
+for (let i = korteles.length; i < 20; i++) {
+    if (Math.trunc(Math.random() * 2) < 1) {
+    korteles[i] = "MasterCard";
+    } 
+    else {
+    korteles[i] = "Visa";
+    }
+}
+console.log("mastercard ir visa korteles: ", korteles);
 // 13. Paskaičiuokite, kokio tipo kortelių ('MasterCard' arba 'Visa') yra daugiau;
 
-// 14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
 
+// 14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
 
 // 15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
 

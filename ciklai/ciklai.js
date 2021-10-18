@@ -107,7 +107,7 @@ while (randomeSuma <= 100 || randomeNaujasSuma <= 100) {
   randomeNaujas = Math.trunc(Math.random() * 11);
   randomeNaujasSuma += randomeNaujas;
   console.log("randome skaicius: ", randome, " ", "randomNaujas skaicius: ", randomeNaujas);
-  console.log("randomeSuma: ", randomeSuma, " ", "randomeNaujasSuma5\: ", randomeNaujasSuma);
+  console.log("randomeSuma: ", randomeSuma, " ", "randomeNaujasSuma: ", randomeNaujasSuma);
 }
 
 // 15. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti kol bus sugeneruota po tris arba daugiau nelyginių skaičių.
@@ -116,7 +116,7 @@ let randomoNew;
 let randomoNelyginis = 0;
 let randomoNaujasNelyginis = 0;
 
-while (randomoNelyginis <= 3 && randomoNaujasNelyginis <= 3) {
+while (randomoNelyginis < 3 && randomoNaujasNelyginis < 3) {
   randomo = Math.trunc(Math.random() * 11);
   randomoNaujas = Math.trunc(Math.random() * 11);
   console.log("randomo: ", randomo, " ", "randomoNaujas: ", randomoNaujas);
